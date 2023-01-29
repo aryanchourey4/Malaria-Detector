@@ -27,6 +27,8 @@ The Malaria Atlas Project (MAP) provides a dataset on malaria risk, including in
 
 
 **Link to Solution**   
-Hosted using Replit : https://malaria-detector.aryanchourey4.repl.co/
+Hosted using Replit : https://malaria-detector.aryanchourey4.repl.co/   
+Link for Replit: https://replit.com/@aryanchourey4/Malaria-Detector?v=1   
+(H5 file is more than 25mb so couldn't upload it here. Check the Replit for it.)
 
 **Demo Video** (Submission of the Demo video of your solution should not be more than 3 minutes. Submissions with videos more than 3 minutes long will not be considered.)
