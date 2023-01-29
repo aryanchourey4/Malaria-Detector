@@ -19,7 +19,7 @@ A Malaria Cell Image Classifier using AI-ML has the potential to impact healthca
 
 3. Improved Accuracy: Automated classification can reduce the likelihood of human error, leading to more accurate diagnoses and better treatment outcomes.
 
-4.Data Collection: Automated image classification can provide valuable data on the prevalence of malaria, helping healthcare professionals and government agencies develop more effective intervention strategies.
+4. Data Collection: Automated image classification can provide valuable data on the prevalence of malaria, helping healthcare professionals and government agencies develop more effective intervention strategies.
 
 5. Cost Savings: Automated image classification can reduce the cost of diagnosing and treating malaria by reducing the time and resources required for manual image classification.
 
