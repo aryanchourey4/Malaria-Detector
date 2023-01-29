@@ -15,7 +15,7 @@ The Malaria Atlas Project (MAP) provides a dataset on malaria risk, including in
 <hr>
 
 
-**Key Features of your Solution**
+**Key Features**
 
 1. Easy To Use
 
@@ -26,6 +26,7 @@ The Malaria Atlas Project (MAP) provides a dataset on malaria risk, including in
 ...
 
 
-**Link to your Solution** (Optional)
+**Link to Solution**   
+Hosted using Replit : https://malaria-detector.aryanchourey4.repl.co/
 
 **Demo Video** (Submission of the Demo video of your solution should not be more than 3 minutes. Submissions with videos more than 3 minutes long will not be considered.)
