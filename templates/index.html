@@ -1,149 +1,170 @@
-<html lang="en">
+<!DOCTYPE html>
+<html>
     <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <title>Malaria Detector</title>
-        <link
-            href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css"
-            rel="stylesheet"
-        />
-        <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"></script>
-        <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-        <link
-            href="{{ url_for('static', filename='css/main.css') }}"
-            rel="stylesheet"
-        />
+      <link rel="icon" type="image/x-icon" href="../static/icon.png">
+        <link href="../static/css/main.css" rel="stylesheet" />
         <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
         <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+            crossorigin="anonymous"
+        />
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+            crossorigin="anonymous"
+        ></script>
     </head>
-
     <body>
         <nav id="bruhlyf" class="bruh">
             <div class="bruh-text">
-                <a class="text-white">
-                  <div class="logo-container">
-                  <iconify-icon class="mr-3" icon="fluent-emoji-high-contrast:mosquito" width="50" height="50" flip="horizontal"></iconify-icon>
-                  <span class="navbar-brand display-4 text-white">Malaria Detector</span></div></a>
+                <a class="grad">
+                    <div class="logo-container grad">
+                        <iconify-icon
+                            class=""
+                            icon="fluent-emoji-high-contrast:mosquito"
+                            width="50"
+                            height="50"
+                            flip="horizontal"
+                        ></iconify-icon>
+                        <span class="mr-2">Malaria Detector</span>
+                    </div></a
+                >
             </div>
-            <a href="#test"><button class="jump-to-test">Test a Sample</button></a>
+            <a href="#test"
+                ><button class="btn jump-to-test">Test Samples</button></a
+            >
         </nav>
-        <div class="jumbotron spaced">
-          <div id="spaced">Bruh</div>
-            <h1 class="display-4 mt-5">Malaria Detector</h1>
-            <p class="lead">
-                This project is a python script for building and training a
-                convolutional neural network (CNN) for classifying RBCs
-                as either infected or uninfected based on their microscopic
-                images. The impact of this project is that it helps automate the
-                process of malaria parasitized RBCs detection, which is a crucial task in
-                diagnosing and treating the disease. By training a machine
-                learning model on a large dataset of microscopic images, the
-                model can learn to accurately identify infected cells, reducing
-                the workload and increasing the speed of diagnosis for medical
-                professionals. The use of this project is in medical research and
-                diagnosis, where it can be used to quickly and accurately
-                classify malaria parasitized RBCs, reducing the time and resources needed
-                for manual inspection. Additionally, this code serves as a good
-                starting point for researchers and practitioners looking to
-                build similar models for cell classification and other medical
-                imaging tasks.
+        <div class="spaced"></div>
+        <div class="intro mb-5">
+            <h1 class="display-2">Malaria Detector</h1>
+            <hr />
+            <p class="to-be-centerd">
+                A quick, easy and accurate way to detect malaria in RBCs.
             </p>
-            <hr class="my-4" />
-            <h2 class="display-6">Approach</h2>
-            <p class="lead">
-                The ML part in this project is written in python programming
-                language. It is a script for detecting malaria parasitized RBCs in a given
-                set of images. The script uses computer vision techniques and a
-                convolutional neural network (CNN) to train and classify images
-                as either infected with malaria or not infected. The code then
-                loads the training and testing data. The data consists of
-                thousands of images of malarial cells, some infected and some
-                not infected. It resizes the images to a fixed size of 64x64
-                pixels, appends the resized images to a list 'dataset' and their
-                respective labels (0 for infected and 1 for not infected) to
-                another list 'label'. The data is then split into training and
-                testing datasets using the 'train_test_split' function from
-                'sklearn' library. Finally, it defines the architecture of
-                the CNN using 'keras' functions for the model input,
-                convolutional layers, pooling, normalization, dropout, dense
-                layers, and the output. The architecture is then compiled using
-                'keras' and the model is trained on the training data using the
-                'fit' function. The trained model is then evaluated on the
-                testing data. The accuracy of this model is approximately 95%+.
-            </p>
-            <h2 class="display-6">Deployment</h2>
-            <p class="lead">
-                We used the Flask web framework with python and Keras deep
-                learning library to build a RESTful API. The code creates a
-                Flask web application, loads a pre-trained image classification
-                model, and creates a route that predicts the class of an
-                uploaded image file (infected or uninfected). The image is
-                processed and passed as input to the deep learning model, which
-                returns the predicted class index. The class index is then
-                converted to a string class label using a dictionary, and
-                returned as a response to the client who made the prediction
-                request. It is hosted using Replit.
-            </p>
-        </div>
-        <div id="test" class="mosquito">
-            <h1 class="display-4 ml-5">Test a Sample</h1>
-            <lottie-player class="" src="https://assets8.lottiefiles.com/packages/lf20_trge7v5t.json" background="transparent"  speed="1"  style="width: 300px; height: 300px;" loop autoplay></lottie-player>
+            <div class="infos mb-5">
+                <div class="infos-key">
+                  <h3>Key Features</h3>
+                    <ul>
+                        <li>1. Easy to Use</li>
+                        <li>2. Accuracy of 95% +</li>
+                        <li>3. Quick Response</li>
+                        <li>4. Test Multiple RBCs at once</li>
+                    </ul>
+                </div>
+                <div class="infos-adv">
+                  <h3>Advantages</h3>
 
-            
-        </div>
-        <div class="container">
-            <div class="to-be-centerd" id="content" style="margin-top: 2em">
-                <h2 class="display-5 mb-5">Upload a sample cell</h2>
-                <div>
-                    <form
-                        id="upload-file"
-                        method="post"
-                        enctype="multipart/form-data"
-                    >
-                        <label for="imageUpload" class="upload-label">
-                            Choose...
-                        </label>
-                        <input
-                            type="file"
-                            name="file"
-                            id="imageUpload"
-                            accept=".png, .jpg, .jpeg"
-                        />
-                    </form>
-
-                    <div class="image-section ml-5" style="display: none">
-                        <div class="img-preview">
-                            <div id="imagePreview"></div>
-                        </div>
-                        <div>
-                            <button
-                                type="button"
-                                class="predict-button"
-                                id="btn-predict"
-                            >
-                                Predict!
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="loader" style="display: none"></div>
-
-                    <h3 id="result">
-                        <span> </span>
-                    </h3>
+                    <ul>
+                        <li>1. Early Detection</li>
+                        <li>2. Increased Efficiency</li>
+                        <li>3. Improved Accuracy</li>
+                        <li>4. Data Collection</li>
+                        <li>5. Cost Savings</li>
+                        <li>6. Afforadable</li>
+                    </ul>
                 </div>
             </div>
+            <div class="tek-stak mt-5 mb-5">
+                <h1>Tech Stack</h1>
+                <p>
+                    Front-end : HTML, CSS, Javascript, Bootstrap
+                </p>
+                <p>Back-end : Flask</p>
+                <p>AI/ML Model : Tensorflow, Keras CNN</p>
+            </div>
         </div>
-        <a href="#bruhlyf"><lottie-player class="up-arrow" src="https://assets4.lottiefiles.com/packages/lf20_ddbwlkke.json" background="transparent"  speed="1"  style="width: 70px; height: 70px;" loop autoplay></lottie-player></a>
-    </body>
+        <hr />
 
-    <footer>
-        <div class="footer-text text-white">Made with <3 by Team BruhLyf.</div>
-        <script
-            src="{{ url_for('static', filename='js/main.js') }}"
-            type="text/javascript"
-        ></script>
-    </footer>
+        <div id="test" class="mosquito">
+            <h1 class="display-4 ml-5">Test Samples</h1>
+            <lottie-player
+                class=""
+                src="https://assets8.lottiefiles.com/packages/lf20_trge7v5t.json"
+                background="transparent"
+                speed="1"
+                style="width: 300px; height: 300px"
+                loop
+                autoplay
+            ></lottie-player>
+        </div>
+        <form class="mt-5" id="form">
+            <input
+                class="form-control to-be-centerd mt-3 mb-5"
+                type="file"
+                name="folder"
+                accept=".png, .jpg, .jpeg"
+                multiple
+            />
+            <button class="btn btn-primary mb-5" type="submit">Predict</button>
+        </form>
+        <div class="image-preview mb-5"></div>
+        <div class="to-be-centerd mb-5" id="result">
+            <!-- Display the result here -->
+        </div>
+        <a href="#bruhlyf"
+            ><lottie-player
+                class="up-arrow"
+                src="https://assets4.lottiefiles.com/packages/lf20_ddbwlkke.json"
+                background="transparent"
+                speed="1"
+                style="width: 70px; height: 70px"
+                loop
+                autoplay
+            ></lottie-player
+        ></a>
+
+        <footer class="mt-5">
+            <div class="footer-text text-white">
+                Made with <3 by Team BruhLyf.
+            </div>
+        </footer>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $("#form").submit(function (e) {
+                    e.preventDefault();
+                    var formData = new FormData(this);
+                    $(".image-preview").html("");
+                    var files = $("input[name='folder']")[0].files;
+                    for (var i = 0; i < files.length; i++) {
+                        var reader = new FileReader();
+                        reader.onload = (function (file) {
+                            return function (e) {
+                                var img = document.createElement("img");
+                                img.src = e.target.result;
+                                $(".image-preview").append(img);
+                            };
+                        })(files[i]);
+                        reader.readAsDataURL(files[i]);
+                    }
+                    $.ajax({
+                        type: "POST",
+                        url: "/predict",
+                        data: formData,
+                        processData: false,
+                        contentType: false,
+                        success: function (data) {
+                          var perc = 
+                          (data[0]/(data[0]+data[1]))*100
+                            $("#result").html(
+                                "Infected: " +
+                                    data[0] +
+                                    "\t | Uninfected: " +
+                                    data[1] +
+                                    "\t | Percentage Infected: " +
+                                    perc +"%"
+                            );
+                        },
+                        error: function (error) {
+                            console.log(error);
+                        },
+                    });
+                });
+            });
+        </script>
+    </body>
 </html>
