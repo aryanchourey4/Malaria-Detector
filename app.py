@@ -28,7 +28,7 @@ app = Flask(__name__)
 
 model = keras.models.load_model('my_model.h5')
 
-dic = {0: 'Parasitized', 1: 'Uninfected'}
+dic = {0: 'Infected', 1: 'Uninfected'}
 
 
 def model_predict(img_path, model):
@@ -53,26 +53,29 @@ import os
 @app.route('/predict', methods=['GET', 'POST'])
 def upload():
   if request.method == 'POST':
+    # Create a local folder to store uploaded files
+    UPLOAD_FOLDER = 'uploads'
+    if not os.path.exists(UPLOAD_FOLDER):
+      os.makedirs(UPLOAD_FOLDER)
+
     # Get the file from post request
-    f = request.files['file']
-
-    # Save the file to ./uploads
-    basepath = os.path.dirname(__file__)
-    upload_path = os.path.join(basepath, 'uploads')
-    if not os.path.exists(upload_path):
-      os.makedirs(upload_path)
-    file_path = os.path.join(upload_path, secure_filename(f.filename))
-    f.save(file_path)
-
-    # Make prediction
-    pred_class = model_predict(file_path, model)
-    pred_class = np.argmax(pred_class[0])
-    # Convert class index to class label
-
-    result = str(dic[pred_class])
-    return result
-  return None
+    folder = request.files.getlist('folder')
+    results = []
+    for file in folder:
+      filename = secure_filename(file.filename)
+      file.save(os.path.join(UPLOAD_FOLDER, filename))
+      file_path = os.path.join(UPLOAD_FOLDER, filename)
+      # Make prediction
+      pred_class = model_predict(file_path, model)
+      pred_class = np.argmax(pred_class[0])
+      # Convert class index to class label
+      result = str(dic[pred_class])
+      # Add the result to the list of results
+      results.append(result)
+    infected_count = results.count('Infected')
+    uninfected_count = results.count('Uninfected')
+    return jsonify([infected_count, uninfected_count])
 
 
 if __name__ == '__main__':
-  app.run(host='0.0.0.0', port=8080)
+  app.run(host='0.0.0.0', port=5000)
